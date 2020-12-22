@@ -19,3 +19,11 @@ void main() async {
   await initLogSrv(enabled: kDebugMode);
 }
 ```
+
+### Preview Log
+
+Use Navigator to push new route with:
+
+```dart
+Navigator.of(context).push(MaterialPageRoute(builder: (_) => createLoggerView()));
+```
