@@ -1,7 +1,15 @@
 library lecle_logger;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:flutter/material.dart';
+import 'package:let_log/let_log.dart';
+
+part 'logger_srv.dart';
+
+Future initLogSrv({bool enabled = true}) async {
+  assert(enabled != null);
+  return _LogService.init();
 }
+
+_LogService get logSrv => _LogService.shared();
+
+Widget createLoggerView() => Logger();
